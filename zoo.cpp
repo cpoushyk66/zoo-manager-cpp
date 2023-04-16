@@ -3,8 +3,6 @@
 #include "Animal.h"
 #include <iostream>
 
-using namespace class1020;
-
 int main( int argc, char** argv )
 {
 /*

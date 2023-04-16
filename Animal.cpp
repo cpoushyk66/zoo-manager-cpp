@@ -88,7 +88,7 @@ int Animal::getAnimalTotal()
 	return animalTotal;
 }
 
-	const std::string Animal::AnimalType() const
+const std::string Animal::AnimalType() const
 {
 	return animal_type;
 }
@@ -374,7 +374,7 @@ Animal* Zoo(int nb_tigers, int nb_hyenas, int nb_possums, int nb_chickens)
 void SpawningCycle(Animal* linkedlist)
 {
 	Animal* temp = linkedlist;
-	int MAX_LOOP = Animal::getAnimalTotal();
+	int MAX_LOOP = Animal::getAnimalTotal() - 1;
 
 	for (int i = 0; i < MAX_LOOP; i++)
 	{
