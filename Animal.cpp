@@ -1,4 +1,5 @@
 #include "Animal.h"
+#include <string>
 
 Animal::Animal(int ls, std::string at)
 {
@@ -11,7 +12,7 @@ Animal::Animal(int ls, std::string at)
 
 void Animal::grow_older()
 {
-	if (++age == life_span)
+	if (++age == getLifeSpan())
 	{
 		die();
 	}
@@ -31,7 +32,7 @@ void Animal::die()
 	}
 
 	std::cout << "Deconstructed a " << animal_type << std::endl;
-	std::cout << "Deconstructing " << animal_type << " living " << this->getAge() << " out of " << life_span << std::endl;
+	std::cout << "Deconstructing " << animal_type << " living " << age << " out of " << life_span << std::endl;
 
 	delete this;
 }
@@ -428,7 +429,7 @@ Animal* AgingCycle(Animal* linkedlist)
 void ShowTheZoo()
 {
 	std::cout << "Zoo Population: " << Animal::getAnimalTotal() << std::endl;
-	std::cout << "    Hyenas:   " << Hyena::getHyenaTotal() << std::endl;
+	std::cout << "    Hyenas:   " << Hyena::getHyenaTotal() << ": " << Hyena::getHyenaTotal() * 100 / Animal::getAnimalTotal() << "%" << std::endl;
 	std::cout << "    Tigers:   " << Tiger::getTigerTotal() << std::endl;
 	std::cout << "    Possums:  " << Possum::getPossumTotal() << std::endl;
 	std::cout << "    Chickens: " << Chicken::getChickenTotal() << std::endl;
